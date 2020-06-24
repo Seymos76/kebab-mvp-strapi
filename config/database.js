@@ -1,5 +1,5 @@
 module.exports = ({ env }) => ({
-  defaultConnection: 'default',
+  defaultConnection: 'mongo',
   connections: {
     default: {
       connector: 'bookshelf',
@@ -9,6 +9,15 @@ module.exports = ({ env }) => ({
       },
       options: {
         useNullAsDefault: true,
+      },
+    },
+    mongo: {
+      connector: 'mongoose',
+      settings: {
+        uri: env('DATABASE_URI'),
+      },
+      options: {
+        ss1: true,
       },
     },
   },
