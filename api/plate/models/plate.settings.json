@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plates",
+  "info": {
+    "name": "Plate"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "available": {
+      "type": "boolean"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
